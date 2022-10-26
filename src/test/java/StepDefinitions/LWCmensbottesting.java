@@ -1,19 +1,22 @@
 package StepDefinitions;
 
+import Pages.DialogContent;
+import Utilities.GWD;
 import io.cucumber.java.en.*;
+import org.openqa.selenium.WebDriver;
 
 public class LWCmensbottesting {
 
-
+    DialogContent dc=new DialogContent();
     @Given("Open website go to home page")
     public void open_website_go_to_home_page() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        WebDriver driver = GWD.getDriver();
+        driver.get("https://www.lcwaikiki.com/tr-TR/TR");
+        driver.manage().window().maximize();
     }
     @When("Verify that you are on the home page")
     public void verify_that_you_are_on_the_home_page() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        dc.findAndContainsText("assertPage", "WAIKIKI");
     }
     @When("Go to Men's boots using the action class or with the help of the search button")
     public void go_to_men_s_boots_using_the_action_class_or_with_the_help_of_the_search_button() {
