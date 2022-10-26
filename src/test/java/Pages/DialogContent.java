@@ -13,11 +13,62 @@ public class DialogContent extends Parent {
         PageFactory.initElements(GWD.getDriver(), this);
     }
 
-    @FindBy(css = "[id='onetrust-accept-btn-handler']")
-    private WebElement acceptCookies;
-
     @FindBy(css = "[class='menu-header-item__title--waikiki']")
     private WebElement assertPage;
+
+    @FindBy(xpath = "//a[text()='Ayakkabı']")
+    public WebElement shoesLink;
+
+    @FindBy(xpath = "(//div[contains(@class,'col-sm-3 pl-0 image_Box visible-lg visible-md')])[1]")
+    public WebElement menLink;
+
+    @FindBy(xpath = "//span[text()='X']")
+    public WebElement otherFrame;
+
+    @FindBy(xpath = "//button[text()='ANLADIM']")
+    public WebElement cookieClose;
+
+    @FindBy(xpath = "(//a[text()='SEPETE EKLE'])[2]")
+    public WebElement addToCart;
+
+    @FindBy(xpath = "(//div/a[@class='quick-filters__item'])[3]")
+    public WebElement menBots;
+
+    @FindBy(css = "[id='shopping-cart']")
+    public WebElement cartInside;
+
+    @FindBy(xpath = "(//a[text()='ÖDEME ADIMINA GEÇ'])[2]")
+    public WebElement payment;
+
+    @FindBy(xpath = "(//*[@placeholder='E-Posta Adresiniz'])[2]")
+    public WebElement eMail;
+
+    @FindBy(id = "FullNameInput")
+    public WebElement nameForm;
+
+    @FindBy(id = "PhoneNumberInput")
+    public WebElement PhoneNumberInput;
+
+    @FindBy(xpath = "//input[@aria-controls='vs1__listbox']")
+    public WebElement cityList;
+
+    @FindBy(xpath = "//input[@aria-controls='vs2__listbox']")
+    public WebElement districtList;
+
+    @FindBy(xpath = "//input[@aria-controls='vs3__listbox']")
+    public WebElement neigList;
+
+    @FindBy(id = "AddressInput")
+    public WebElement AddressInput;
+
+    @FindBy(id = "AddressDefinitionInput")
+    public WebElement AddressDefinitionInput;
+
+    @FindBy(css = "[class='modalAddButton']")
+    public WebElement saveBtn;
+
+    @FindBy(xpath = "//span[@class='vs__selected']/text()")
+    public WebElement anyCity;
 
     WebElement myElement;
 
@@ -25,9 +76,37 @@ public class DialogContent extends Parent {
 
         switch (strElement) {
 
-//            case "searchInput":
-//                myElement = searchInput;
-//                break;
+            case "eMail":
+                myElement = eMail;
+                break;
+
+            case "nameForm":
+                myElement = nameForm;
+                break;
+
+            case "PhoneNumberInput":
+                myElement = PhoneNumberInput;
+                break;
+
+            case "AddressInput":
+                myElement = AddressInput;
+                break;
+
+            case "AddressDefinitionInput":
+                myElement = AddressDefinitionInput;
+                break;
+
+            case "cityList":
+                myElement = cityList;
+                break;
+
+            case "districtList":
+                myElement = districtList;
+                break;
+
+            case "neigList":
+                myElement = neigList;
+                break;
 
         }
 
@@ -36,12 +115,49 @@ public class DialogContent extends Parent {
 
     public void findAndClick(String strElement) {
 
+
         switch (strElement) {
 
-//            case "addToCart":
-//                myElement = addToCart;
-//                break;
+            case "otherFrame":
+                myElement = otherFrame;
+                break;
 
+            case "cookieClose":
+                myElement = cookieClose;
+                break;
+
+            case "menBots":
+                myElement = menBots;
+                break;
+
+            case "shoesLink":
+                myElement = shoesLink;
+                break;
+
+            case "menLink":
+                myElement = menLink;
+                break;
+
+            case "addToCart":
+                myElement = addToCart;
+                break;
+
+            case "cartInside":
+                myElement = cartInside;
+                break;
+
+            case "payment":
+                myElement = payment;
+                break;
+
+
+            case "saveBtn":
+                myElement = saveBtn;
+                break;
+
+            case "anyCity":
+                myElement = anyCity;
+                break;
 
         }
 
