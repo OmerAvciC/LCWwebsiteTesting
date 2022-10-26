@@ -16,6 +16,9 @@ public class DialogContent extends Parent {
     @FindBy(css = "[id='onetrust-accept-btn-handler']")
     private WebElement acceptCookies;
 
+    @FindBy(css = "[class='menu-header-item__title--waikiki']")
+    private WebElement assertPage;
+
     WebElement myElement;
 
     public void findAndSend(String strElement, String value) {
@@ -50,10 +53,8 @@ public class DialogContent extends Parent {
         // burda string isimden weblemente ulaşıcam
         switch (strElement) {
 
-//            case "homepageVerify":
-//                myElement = homepageVerify;
-//                break;
-//
+            case "assertPage":  myElement = assertPage;   break;
+
         }
 
         verifyContainsText(myElement, text);
