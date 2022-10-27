@@ -22,6 +22,12 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "(//div[contains(@class,'col-sm-3 pl-0 image_Box visible-lg visible-md')])[1]")
     public WebElement menLink;
 
+    @FindBy(linkText = "KADIN")
+    public WebElement WOMAN;
+
+    @FindBy(xpath = "//div[@class='col-sm-12 uzun visible-lg visible-md']/a")
+    public WebElement WOMANLINK;
+
     @FindBy(xpath = "//span[text()='X']")
     public WebElement otherFrame;
 
@@ -135,6 +141,10 @@ public class DialogContent extends Parent {
                 myElement = otherFrame;
                 break;
 
+            case "WOMANLINK":
+                myElement = WOMANLINK;
+                break;
+
             case "cookieClose":
                 myElement = cookieClose;
                 break;
@@ -186,6 +196,10 @@ public class DialogContent extends Parent {
 
             case "productSelect":
                 myElement = productSelect.get(rnd);
+                break;
+
+            case "WOMAN":
+                myElement = WOMAN;
                 break;
 
         }
