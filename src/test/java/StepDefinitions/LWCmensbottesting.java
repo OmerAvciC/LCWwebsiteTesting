@@ -99,7 +99,7 @@ public class LWCmensbottesting {
             File dosya = new File("src/test/java/Resources/productInfo.txt");
             FileWriter yazici = new FileWriter(dosya,true);
             BufferedWriter yaz = new BufferedWriter(yazici);
-            yaz.write("  -  Information  :  " + price.getText());
+            yaz.write("  Information  :  " + price.getText());
             yaz.close();
             System.out.println("Successfully");
         }
@@ -123,8 +123,8 @@ public class LWCmensbottesting {
         WebElement continuee = GWD.getDriver().findElement(By.xpath("//button[text()='Üye Olmadan Devam Et']"));
         continuee.click();
 
-        dc.findAndSend("nameForm","Mümtaz Clemantin");
-        dc.findAndSend("PhoneNumberInput","5552221100");
+        dc.findAndSend("nameForm","Shopen Özyilmaz");
+        dc.findAndSend("PhoneNumberInput","5554445520");
 
         dc.findAndSend("cityList","İzmir");
         actions.keyDown(Keys.ENTER).build().perform();
