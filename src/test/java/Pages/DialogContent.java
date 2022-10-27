@@ -70,6 +70,19 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//span[@class='vs__selected']/text()")
     public WebElement anyCity;
 
+    @FindBy(xpath = "//a[text()='EV & YAŞAM']")
+    public WebElement homeLifeTitle;
+
+    @FindBy(xpath = "(//img[contains(@src,'hlp-lisans.jpg')])[1]")
+    public WebElement lisancedProducts;
+
+    @FindBy(xpath = "(//div/a[@class='quick-filters__item'])[4]")
+    public WebElement kizBebekCheckButton;
+
+   @FindBy(className = "product-card__product-info")
+    public List<WebElement> productSelect;
+
+
     WebElement myElement;
 
     public void findAndSend(String strElement, String value) {
@@ -114,7 +127,7 @@ public class DialogContent extends Parent {
     }
 
     public void findAndClick(String strElement) {
-
+        int rnd=(int)(Math.random()*productSelect.size());
 
         switch (strElement) {
 
@@ -157,6 +170,22 @@ public class DialogContent extends Parent {
 
             case "anyCity":
                 myElement = anyCity;
+                break;
+
+            case "homeLifeTitle":
+                myElement = homeLifeTitle;
+                break;
+
+            case "lisancedProducts":
+                myElement = lisancedProducts;
+                break;
+
+            case "kizBebekCheckButton":
+                myElement = kizBebekCheckButton;
+                break;
+
+            case "productSelect":
+                myElement = productSelect.get(rnd);
                 break;
 
         }
