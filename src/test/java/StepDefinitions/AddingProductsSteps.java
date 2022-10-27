@@ -42,5 +42,6 @@ public class AddingProductsSteps {
 
         productSelect.get(random).click();
 
+
     }
 }

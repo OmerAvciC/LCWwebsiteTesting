@@ -82,6 +82,7 @@ public class DialogContent extends Parent {
    @FindBy(className = "product-card__product-info")
     public List<WebElement> productSelect;
 
+
     WebElement myElement;
 
     public void findAndSend(String strElement, String value) {
