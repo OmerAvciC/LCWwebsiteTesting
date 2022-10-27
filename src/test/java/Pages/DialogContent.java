@@ -19,11 +19,32 @@ public class DialogContent extends Parent {
     @FindBy(css = "[class='menu-header-item__title--waikiki']")
     private WebElement assertPage;
 
+    //orcun112---------------------------------
+    @FindBy(xpath = "(//*[@class='editable ins-element-editable editable-text'])[3]")
+    private WebElement clickincokie1;
+    @FindBy(xpath = "//button[text()='ANLADIM']")
+    private WebElement clickninanladım;
+    @FindBy(xpath = "//*[@id='_sorun_icon_img']")
+    private WebElement livesupportclick;
+
+    @FindBy(xpath = "//div[text()='Sipariş Durumum']")
+    private WebElement clickinorders;
+
+    @FindBy(xpath = "//*[@id='endButton']")
+    private WebElement quitlick;
+//
+    @FindBy(xpath = "//span[text()='Evet']")
+    private WebElement quitclickYes;
+
+
+    //-----------------------------------------
+
     WebElement myElement;
 
     public void findAndSend(String strElement, String value) {
 
         switch (strElement) {
+
 
 //            case "searchInput":
 //                myElement = searchInput;
@@ -37,6 +58,24 @@ public class DialogContent extends Parent {
     public void findAndClick(String strElement) {
 
         switch (strElement) {
+            case "clickincokie1":
+                myElement = clickincokie1;
+                break;
+            case "clickninanladım":
+                myElement = clickninanladım;
+                break;
+            case "livesupportclick":
+                myElement = livesupportclick;
+                break;
+            case "clickinorders":myElement=clickinorders;break;
+
+            case "quitlick":
+                myElement = quitlick;
+                break;
+            case "quitclickYes":
+                myElement = quitclickYes;
+                break;
+
 
 //            case "addToCart":
 //                myElement = addToCart;
@@ -53,7 +92,9 @@ public class DialogContent extends Parent {
         // burda string isimden weblemente ulaşıcam
         switch (strElement) {
 
-            case "assertPage":  myElement = assertPage;   break;
+            case "assertPage":
+                myElement = assertPage;
+                break;
 
         }
 

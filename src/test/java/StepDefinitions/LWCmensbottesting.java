@@ -13,6 +13,9 @@ public class LWCmensbottesting {
         WebDriver driver = GWD.getDriver();
         driver.get("https://www.lcwaikiki.com/tr-TR/TR");
         driver.manage().window().maximize();
+//        driver.manage().deleteAllCookies();
+//        driver.switchTo().alert().dismiss();
+
     }
     @When("Verify that you are on the home page")
     public void verify_that_you_are_on_the_home_page() {

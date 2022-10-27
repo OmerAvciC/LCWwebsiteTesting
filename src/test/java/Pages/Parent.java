@@ -14,7 +14,7 @@ public class Parent {
 
     public void sendKeysFunction(WebElement element, String value) {//3.Aşama
 
-
+waitUntilClickable(element);
         waitUntilVisible(element);
         scrollToElement(element);
         element.clear();
@@ -48,9 +48,9 @@ public class Parent {
         waitUntilVisible(element);
         Assert.assertTrue(element.getText().toLowerCase().contains(text.toLowerCase()));
     }
-    public List<WebElement> waitVisibleListAllElement(List<WebElement> elementList) {
+    public List<String> visibilityOfAllElement(List<String> elementList) {
         WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.visibilityOfAllElements(elementList));
+        wait.until(ExpectedConditions.visibilityOfAllElements((WebElement) elementList));
         return elementList;
     }
 
