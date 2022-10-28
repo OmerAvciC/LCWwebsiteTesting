@@ -152,4 +152,38 @@ public class LWCmensbottesting {
         dc.findAndClick("saveBtn");
     }
 
+    @And("Product price and discount rate")
+    public void productPriceAndDiscountRate() {
+        WebElement sonFiyat;
+        int ilkFiyatInt=0;
+
+        List<WebElement> indirimVar=GWD.getDriver().findElements(By.cssSelector("[class='rd-cart-item-old-price']"));
+        if (indirimVar.size() > 0) {
+            WebElement ilkFiyat = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[class='rd-cart-item-old-price']")));
+            System.out.println("------------------------------------------------");
+            System.out.println("İlk Fiyat = " + ilkFiyat.getText());
+            System.out.println("------------------------------------------------");
+            String ilkFiyatString=ilkFiyat.getText();
+            ilkFiyatInt=Integer.parseInt(ilkFiyatString.substring(0,3));
+        }else {
+            System.out.println("------------------------------------------------");
+            System.out.println("Bu üründe indirim bulunmamaktadır.");
+            sonFiyat = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[class='rd-cart-item-price mb-15']")));
+            System.out.println("İndirimsiz fiyat = " + sonFiyat.getText());
+            System.out.println("------------------------------------------------");
+        }
+        sonFiyat = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[class='rd-cart-item-price mb-15']")));
+
+        if (indirimVar.size() > 0) {
+            System.out.println("Son Fiyat = " + sonFiyat.getText());
+            String sonFiyatString=sonFiyat.getText();
+            int sonFiyatInt=Integer.parseInt(sonFiyatString.substring(0,3));
+
+            int indirimyuzdeligi=100-(sonFiyatInt*100/ilkFiyatInt);
+            System.out.println("------------------------------------------------");
+            System.out.println("Ürünün indirim oranı %"+indirimyuzdeligi+" olarak bulunmuş olup.");
+            System.out.println("Ürün %"+indirimyuzdeligi+" indirimli olarak satın alınabilir.");
+            System.out.println("------------------------------------------------");
+        }
+    }
 }
