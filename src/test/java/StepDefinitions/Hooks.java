@@ -1,6 +1,7 @@
 package StepDefinitions;
 
 import Utilities.GWD;
+import com.aventstack.extentreports.service.ExtentTestManager;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -36,7 +37,7 @@ public class Hooks {
             TakesScreenshot screenshot = (TakesScreenshot) GWD.getDriver();
             File ekranDosyasi = screenshot.getScreenshotAs(OutputType.FILE);
 
-//            ExtentTestManager.getTest().addScreenCaptureFromBase64String(getBase64Screenshot());
+            ExtentTestManager.getTest().addScreenCaptureFromBase64String(getBase64Screenshot());
             try {
                 FileUtils.copyFile(ekranDosyasi,
                         new File("target/FailedScreenShots/"+ scenario.getId()+date.format(formatter)+".png"));
