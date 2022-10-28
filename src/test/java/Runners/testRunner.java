@@ -5,7 +5,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.Listeners;
 
-public class testRunner {
+public class testRunner extends AbstractTestNGCucumberTests {
 
 
     @CucumberOptions(
