@@ -88,6 +88,15 @@ public class DialogContent extends Parent {
    @FindBy(className = "product-card__product-info")
     public List<WebElement> productSelect;
 
+    @FindBy(css = "a[href*='m-markalar']")
+    public WebElement markalaraOzelIndirimKupon;
+
+    @FindBy(css = "a[href*='indirimli-shade']")
+    public WebElement indirimliShadeKadinUrunleri;
+
+    @FindBy(xpath = "//span[text()='Bluz']")
+    public WebElement filtreBluz;
+
 
     WebElement myElement;
 
@@ -196,6 +205,18 @@ public class DialogContent extends Parent {
 
             case "productSelect":
                 myElement = productSelect.get(rnd);
+                break;
+
+            case "markalaraOzelIndirimKupon":
+                myElement = markalaraOzelIndirimKupon;
+                break;
+
+            case "indirimliShadeKadinUrunleri":
+                myElement = indirimliShadeKadinUrunleri;
+                break;
+
+            case "filtreBluz":
+                myElement = filtreBluz;
                 break;
 
             case "WOMAN":
