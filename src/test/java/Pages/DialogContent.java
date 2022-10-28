@@ -85,7 +85,7 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "(//div/a[@class='quick-filters__item'])[4]")
     public WebElement kizBebekCheckButton;
 
-   @FindBy(className = "product-card__product-info")
+    @FindBy(className = "product-card__product-info")
     public List<WebElement> productSelect;
 
     @FindBy(css = "a[href*='m-markalar']")
@@ -96,6 +96,20 @@ public class DialogContent extends Parent {
 
     @FindBy(xpath = "//span[text()='Bluz']")
     public WebElement filtreBluz;
+
+    /////////////////////////ORCUN112/////////////////////////////////////
+
+    @FindBy(xpath = "//*[@id='_sorun_icon_img']")
+    private WebElement livesupportclick;
+
+    @FindBy(xpath = "//div[text()='Sipariş Durumum']")
+    private WebElement clickinorders;
+
+    @FindBy(xpath = "//*[@id='endButton']")
+    private WebElement quitlick;
+    //
+    @FindBy(xpath = "//span[text()='Evet']")
+    private WebElement quitclickYes;
 
 
     WebElement myElement;
@@ -136,13 +150,14 @@ public class DialogContent extends Parent {
                 myElement = neigList;
                 break;
 
+
         }
 
         sendKeysFunction(myElement, value);
     }
 
     public void findAndClick(String strElement) {
-        int rnd=(int)(Math.random()*productSelect.size());
+        int rnd = (int) (Math.random() * productSelect.size());
 
         switch (strElement) {
 
@@ -218,6 +233,22 @@ public class DialogContent extends Parent {
             case "filtreBluz":
                 myElement = filtreBluz;
                 break;
+            ////////////////////ORCUN112////////////////////////////
+
+            case "livesupportclick":
+                myElement = livesupportclick;
+                break;
+            case "clickinorders":
+                myElement = clickinorders;
+                break;
+
+            case "quitlick":
+                myElement = quitlick;
+                break;
+            case "quitclickYes":
+                myElement = quitclickYes;
+                break;
+
 
             case "WOMAN":
                 myElement = WOMAN;
@@ -233,7 +264,9 @@ public class DialogContent extends Parent {
         // burda string isimden weblemente ulaşıcam
         switch (strElement) {
 
-            case "assertPage":  myElement = assertPage;   break;
+            case "assertPage":
+                myElement = assertPage;
+                break;
 
         }
 
