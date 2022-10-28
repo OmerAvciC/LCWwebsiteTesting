@@ -31,8 +31,8 @@ public class LWCmensbottesting {
         WebDriver driver = GWD.getDriver();
         driver.get("https://www.lcwaikiki.com/tr-TR/TR");
         driver.manage().window().maximize();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='X']")));
-        dc.findAndClick("otherFrame");
+    //   wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='X']")));
+    //   dc.findAndClick("otherFrame");
         dc.findAndClick("cookieClose");
     }
     @When("Verify that you are on the home page")

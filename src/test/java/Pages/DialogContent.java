@@ -107,9 +107,21 @@ public class DialogContent extends Parent {
 
     @FindBy(xpath = "//*[@id='endButton']")
     private WebElement quitlick;
-    //
+
     @FindBy(xpath = "//span[text()='Evet']")
     private WebElement quitclickYes;
+
+    @FindBy(xpath = "//*[@id=\"search-form__input-field__search-input\"]")
+    public WebElement searchBox;
+
+    @FindBy(xpath = "//button[text()='Ara']")
+    public WebElement search;
+
+    @FindBy(xpath = "//*[@title='Düz Saçaklı Kadın Atkı']")
+    public WebElement scarf;
+
+    @FindBy(xpath = "(//*[text()='Standart'])[2]")
+    public WebElement scarfSize;
 
 
     WebElement myElement;
@@ -148,6 +160,10 @@ public class DialogContent extends Parent {
 
             case "neigList":
                 myElement = neigList;
+                break;
+
+            case "searchBox":
+                myElement = searchBox;;
                 break;
 
 
@@ -249,9 +265,20 @@ public class DialogContent extends Parent {
                 myElement = quitclickYes;
                 break;
 
-
             case "WOMAN":
                 myElement = WOMAN;
+                break;
+
+            case "search":
+                myElement = search;
+                break;
+
+            case "scarf":
+                myElement = scarf;
+                break;
+
+            case "scarfSize":
+                myElement = scarfSize;
                 break;
 
         }
